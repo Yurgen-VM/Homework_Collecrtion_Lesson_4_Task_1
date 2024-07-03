@@ -10,26 +10,23 @@ namespace Task_1
     
     */
 
-
     internal class Program
     {
         static void Main(string[] args)
         {
-
             int SUM = 31;
             int[] array = { -2,-3, 8, 5, -1, 6, 29, 18, 10, 7, 4 };
                                  
             int tempSum = SUM;
             int countCombination = 0;
-            Console.WriteLine($"Сумма чисел должна быть равна: {SUM}\n");
 
+            Console.WriteLine($"Сумма чисел должна быть равна: {SUM}\n");
 
             HashSet<int> set = new HashSet<int>();
             
             int count = 0;            
             foreach (var item in array)
             {
-                //Console.WriteLine($"item = {item}");
                 tempSum -= item;
                 count++;
                 for(int i = count; i < array.Length; i++)
@@ -41,26 +38,16 @@ namespace Task_1
                         set.Clear();
                         Console.WriteLine();
                     }                     
-
                     else
                     {
                         set.Add(array[i]);                       
-
-                        //Console.Write($"{item} ");
-                        //Console.Write($"{array[i]} ");
-                    }                   
-                   
+                    }                                      
                 }
                 set.Clear();
-                tempSum = SUM;               
-                //Console.WriteLine("Очистка set");
-                //Console.WriteLine();
-
+                tempSum = SUM;
             }
             if (countCombination == 0)
                 Console.WriteLine("Ни одной комбинации не найдено");
-
-
 
             Console.ReadLine();
         }
